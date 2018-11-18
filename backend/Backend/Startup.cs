@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AspNetCore.RouteAnalyzer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,10 @@ namespace Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Route Analyzer
+            services.AddRouteAnalyzer();
+
+            // Mvc
             services.AddMvc();
         }
 
@@ -41,6 +46,9 @@ namespace Backend
 
             app.UseMvc(routes =>
             {
+                // Route Analyzer
+                routes.MapRouteAnalyzer("/routes");
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
