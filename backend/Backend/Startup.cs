@@ -1,28 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
-using AspNetCore.RouteAnalyzer;
+﻿using AspNetCore.RouteAnalyzer;
+using Backend.Services.Dashboards;
 using Backend.Services.Reports;
 using DevExpress.AspNetCore;
 using DevExpress.AspNetCore.Reporting;
+using DevExpress.DashboardAspNetCore;
+using DevExpress.DashboardCommon;
+using DevExpress.DashboardWeb;
+using DevExpress.DataAccess.Excel;
+using DevExpress.DataAccess.Sql;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace Backend
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment hostingEnvironment)
         {
             Configuration = configuration;
+            FileProvider = hostingEnvironment.ContentRootFileProvider;
+            DashboardExportSettings.CompatibilityMode = DashboardExportCompatibilityMode.Restricted;
         }
 
         public IConfiguration Configuration { get; }
+        public IFileProvider FileProvider { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -36,7 +42,45 @@ namespace Backend
 
             // Mvc
             services.AddMvc()
-                    .AddDefaultReportingControllers();
+                    .AddDefaultReportingControllers()
+                    .AddDefaultDashboardController((configurator, serviceProvider) => {
+                        configurator.SetConnectionStringsProvider(new DashboardConnectionStringsProvider(Configuration));
+
+                        DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(FileProvider.GetFileInfo("Data/Dashboards").PhysicalPath);
+                        configurator.SetDashboardStorage(dashboardFileStorage);
+
+                        DataSourceInMemoryStorage dataSourceStorage = new DataSourceInMemoryStorage();
+
+                        // Registers an SQL data source.
+                        DashboardSqlDataSource sqlDataSource = new DashboardSqlDataSource("SQL Data Source", "NWindConnectionString");
+                        sqlDataSource.DataProcessingMode = DataProcessingMode.Client;
+                        SelectQuery query = SelectQueryFluentBuilder
+                            .AddTable("Categories")
+                            .Join("Products", "CategoryID")
+                            .SelectAllColumns()
+                            .Build("Products_Categories");
+                        sqlDataSource.Queries.Add(query);
+                        dataSourceStorage.RegisterDataSource("sqlDataSource", sqlDataSource.SaveToXml());
+
+                        // Registers an Object data source.
+                        DashboardObjectDataSource objDataSource = new DashboardObjectDataSource("Object Data Source");
+                        dataSourceStorage.RegisterDataSource("objDataSource", objDataSource.SaveToXml());
+
+                        // Registers an Excel data source.
+                        DashboardExcelDataSource excelDataSource = new DashboardExcelDataSource("Excel Data Source");
+                        excelDataSource.FileName = FileProvider.GetFileInfo("Data/Sales.xlsx").PhysicalPath;
+                        excelDataSource.SourceOptions = new ExcelSourceOptions(new ExcelWorksheetSettings("Sheet1"));
+                        dataSourceStorage.RegisterDataSource("excelDataSource", excelDataSource.SaveToXml());
+
+                        configurator.SetDataSourceStorage(dataSourceStorage);
+
+                        configurator.DataLoading += (s, e) => {
+                            if (e.DataSourceName == "Object Data Source")
+                            {
+                                e.Data = Invoices.CreateData();
+                            }
+                        };
+                    });
 
             // DevExpress Reporting
             services.ConfigureReportingServices(configurator => {
@@ -74,6 +118,10 @@ namespace Backend
                 // Route Analyzer
                 routes.MapRouteAnalyzer("/routes");
 
+                // DevExpress Dashboards
+                routes.MapDashboardRoute("api/dashboard");
+
+                // Default AspNetCore Mvc
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
