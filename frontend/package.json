@@ -26,6 +26,8 @@
     "devexpress-dashboard": "^18.2.3",
     "devexpress-reporting": "^18.2.3",
     "devexpress-reporting-angular": "^18.2.3",
+    "devextreme": "^18.2.3",
+    "devextreme-angular": "^18.2.3",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
