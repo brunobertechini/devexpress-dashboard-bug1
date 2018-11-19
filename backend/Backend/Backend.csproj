@@ -9,6 +9,7 @@
     <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="18.2.3" />
     <PackageReference Include="DevExpress.AspNetCore.Reporting" Version="18.2.3" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.6" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.109.2" />
   </ItemGroup>
 
   <ItemGroup>
