@@ -33,6 +33,9 @@ namespace Backend
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Cors
+            services.AddCors();
+
             // Based on DevExpress Template
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDevExpressControls();
@@ -95,7 +98,7 @@ namespace Backend
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             // DevExpress Reporting
-            var reportDirectory = Path.Combine(env.ContentRootPath, "Service/Reports");
+            var reportDirectory = Path.Combine(env.ContentRootPath, "Services/Reports");
             DevExpress.XtraReports.Web.Extensions.ReportStorageWebExtension.RegisterExtensionGlobal(new ReportStorage(reportDirectory));
             DevExpress.XtraReports.Configuration.Settings.Default.UserDesignerOptions.DataBindingMode = DevExpress.XtraReports.UI.DataBindingMode.Expressions;
 
@@ -112,6 +115,11 @@ namespace Backend
             app.UseStaticFiles();
 
             app.UseDevExpressControls();
+
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+            });
 
             app.UseMvc(routes =>
             {

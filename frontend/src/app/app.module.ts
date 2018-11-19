@@ -9,6 +9,7 @@ import { ReportDesignerComponent } from './report-designer/report-designer.compo
 import { ReportViewerComponent } from './report-viewer/report-viewer.component';
 import { PivotGridComponent } from './pivot-grid/pivot-grid.component';
 import { HomeComponent } from './home/home.component';
+import { DxReportViewerModule, DxReportDesignerModule } from 'devexpress-reporting-angular';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,7 +33,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    DxReportViewerModule,
+    DxReportDesignerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,3 +1,4 @@
-<p>
-  report-designer works!
-</p>
+<dx-report-designer [reportUrl]="reportUrl" [allowMDI]="allowMDI" height="700px" cssClass='report-designer'>
+    <dxrd-request-options [getDesignerModelAction]="getDesignerModelAction" [host]="hostUrl"></dxrd-request-options>
+    <dxrd-callbacks (CustomizeMenuActions)="customizeMenuActions($event)"></dxrd-callbacks>
+</dx-report-designer>
