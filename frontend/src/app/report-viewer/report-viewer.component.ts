@@ -7,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReportViewerComponent implements OnInit {
 
+  public hostUrl = 'http://localhost:52324';
+  public reportUrl = 'XtraReport';
+  public invokeAction = '/DXXRDV';
+
   constructor() { }
 
   ngOnInit() {
