@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import DevExpress from '@devexpress/analytics-core';
 
 @Component({
   selector: 'app-report-designer',
@@ -12,7 +13,13 @@ export class ReportDesignerComponent implements OnInit {
   public allowMDI = false;
   public getDesignerModelAction = '/api/ReportDesigner/GetReportDesignerModel';
 
-  constructor() { }
+  constructor() {
+    DevExpress.Analytics.Utils.ajaxSetup.ajaxSettings = {
+      headers: {
+        'MyHeader': 'MyValue'
+      }
+    };
+  }
 
   ngOnInit() {
   }
