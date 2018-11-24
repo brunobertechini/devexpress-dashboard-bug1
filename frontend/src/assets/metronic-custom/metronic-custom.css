@@ -1,0 +1,160 @@
+.page-bar {
+	background-color: #fff;
+    padding: 0 20px;
+    margin: -25px -20px;
+    border-bottom: 1px solid #e7ecf1
+}
+
+.page-bar .page-breadcrumb > li > i {
+    font-size: 5px;
+    top: -3px;
+    opacity: .4;
+    position: relative;
+    margin: 0 5px;
+}
+
+.page-bar .page-toolbar {
+    padding: 6px 0;
+}
+
+.page-bar .page-breadcrumb {
+    display: inline-block;
+    float: left;
+    padding: 10px 0px;
+    margin: 0;
+    list-style: none;
+}
+
+.page-title {
+    margin: 15px 0;
+    font-size: 24px;
+}
+
+.mt-element-list .list-todo.mt-list-container {
+    border: 0;
+}
+
+.mt-element-list .list-todo.mt-list-container .list-todo-line {
+    left: 10px;
+}
+
+.mt-element-list .list-todo.mt-list-container ul > .mt-list-item {
+    padding: 15px 0;
+}
+
+.mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-item {
+    width: 95%;
+}
+
+.mt-element-list .list-todo.mt-list-container ul > .mt-list-item > .list-todo-icon {
+    margin: 0px;
+}
+
+.btn-group>.dropdown-menu, .dropdown-toggle>.dropdown-menu, .dropdown>.dropdown-menu {
+    margin-top: 10px;
+}
+
+.btn-group>.dropdown-menu:before, .dropdown-toggle>.dropdown-menu:before, .dropdown>.dropdown-menu:before {
+    position: absolute;
+    top: -8px;
+    left: 9px;
+    right: auto;
+    display: inline-block!important;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #fff;
+    border-left: 8px solid transparent;
+    content: '';
+}
+
+.btn-page-bar {
+	margin-top: -12px;
+}
+
+.dashboard-stat2.bordered {
+    border: 1px solid #e7eaec;
+}
+
+.alert, .btn, .portlet-no-shadow {
+	box-shadow: none;
+}
+
+.portlet.light {
+    padding: 0;
+}
+
+.tooltip.customClass .tooltip-inner {
+  color: #000;
+  background-color: whitesmoke;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.tooltip.customClass .tooltip-arrow {
+  border-bottom: 5px solid whitesmoke !important;
+} 
+
+.padding-left-top-4 {
+    padding-left: 4px;
+    padding-top: 4px;
+}
+
+.padding-4 {
+    padding: 4px;
+}
+
+.margin-left-4 {
+    margin-left: 4px;
+}
+
+.page-header.navbar .page-logo .logo-default {
+    margin: 11px 10px 0 18px !important;
+}
+
+.portlet.box.grey-gallery {
+    border: 1px solid #c7c7c7;
+}
+
+.portlet > .portlet-body.grey-gallery, .portlet.grey-gallery, 
+.portlet.box.grey-gallery > .portlet-title {
+    background-color: #e6e6e6 !important;
+}
+
+.portlet.box.grey-gallery > .portlet-title > .caption,
+.portlet.box.grey-gallery > .portlet-title > .caption > i,
+.portlet.box.grey-gallery > .portlet-title > .actions .btn-default:hover,
+.portlet.box.grey-gallery > .portlet-title > .actions .btn-default:focus,
+.portlet.box.grey-gallery > .portlet-title > .actions .btn-default:active,
+.portlet.box.grey-gallery > .portlet-title > .actions .btn-default,
+.portlet.box.grey-gallery > .portlet-title > .actions .btn-default > i
+{
+    color: #373a3c;
+}
+
+.margin-list-todo-item {
+    margin-left: 56px !important;
+    margin-top: -50px;
+}
+
+.page-logo {
+    padding-left: 18px !important;
+}
+
+.menu-toggler.sidebar-toggler {
+    float: left !important;
+    margin: 17px 0 0 0 !important;
+}
+
+.page-sidebar-closed.page-sidebar-closed-hide-logo .page-header.navbar .menu-toggler.sidebar-toggler {
+    margin-left: -4px !important;
+}
+
+@media (min-width: 992px){
+    .page-sidebar-closed.page-sidebar-closed-hide-logo .page-header.navbar .page-logo {
+        width: 235px;
+    }
+}
+
+@media (min-width: 992px){
+    .page-sidebar-closed.page-sidebar-closed-hide-logo .page-header.navbar .page-logo .logo-default {
+        display: inline-block;
+    }
+}
