@@ -312,13 +312,13 @@
     lodash "^4.17.10"
     to-fast-properties "^2.0.0"
 
-"@devexpress/analytics-core@18.2.3":
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/@devexpress/analytics-core/-/analytics-core-18.2.3.tgz#b7d0dc040b7e662a56177a5bb38baa36998c04a4"
-  integrity sha512-/IYAbv7VdBqabFACtbgk/rbjgyGqA26VaND0Jj2xLvOkwgBqXuQZleUQPqtd4GPL9gl/tUhZlxLWPpQuMTULtQ==
+"@devexpress/analytics-core@18.2.4":
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/@devexpress/analytics-core/-/analytics-core-18.2.4.tgz#2e0d975e4f32317f52b601d3b3ccf48e207d93d9"
+  integrity sha512-zHDrlIqNfwpShoZTM4bNnP5RbRa/X3uCZKPbTP06R5oywuh8nThjiP/eFAnUwpmXLuzW2xMDS2VrsAJeIWlfoQ==
   dependencies:
     ace-builds "^1.3.0"
-    devextreme "18.2.3"
+    devextreme "18.2.4"
     jquery "^3.1.1"
     jquery-ui "^1.12.1"
     knockout "^3.4.0"
@@ -2391,43 +2391,43 @@ detect-node@^2.0.3:
   resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.0.4.tgz#014ee8f8f669c5c58023da64b8179c083a28c46c"
   integrity sha512-ZIzRpLJrOj7jjP2miAtgqIfmzbxa4ZOr5jJc601zklsfEx9oTzmmj2nVpIPRpNlRTIh8lc1kyViIY7BWSGNmKw==
 
-devexpress-dashboard@~18.2.3:
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/devexpress-dashboard/-/devexpress-dashboard-18.2.3.tgz#6b9f1c6dc3ca240030a583cf1dbde9db480200cc"
-  integrity sha512-qk1gWEsPswrT2RZvSuh2tOc9DnLu1bzfayNWVmbUMn7YGtxSY0hiUNg08J0HHHam1HXX4CS733Ct2VgZe1kDag==
+devexpress-dashboard@~18.2.4:
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/devexpress-dashboard/-/devexpress-dashboard-18.2.4.tgz#dabe65596cc5cb6dfb34082cd0d18243fb1b74cf"
+  integrity sha512-HghRBtd+Ivi9oy6A8khaj1AN+Ni3G18HiXcN3IZ4pN1RcrnktqqP8Ega+t+EZfDD8BEANKSIs2ojI7gzHx0w2g==
   dependencies:
-    "@devexpress/analytics-core" "18.2.3"
+    "@devexpress/analytics-core" "18.2.4"
     "@types/jquery" "^1.10.34"
     "@types/knockout" "^3.4.58"
-    devextreme "18.2.3"
+    devextreme "18.2.4"
     globalize "^1.0.1"
     jquery "^3.3.1"
     knockout "^3.4.0"
 
-devexpress-reporting-angular@~18.2.3:
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/devexpress-reporting-angular/-/devexpress-reporting-angular-18.2.3.tgz#db7822785496096a184be25b8e9be4481fbd5e62"
-  integrity sha512-1i5IhJofQiAhiVHLmx6TQtj/iPe0MOVk5LCfAn2qKPv0QHNjHp/Ukhatq+ZJFUyj0XHVhujfzlQFZERetu+k7w==
+devexpress-reporting-angular@~18.2.4:
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/devexpress-reporting-angular/-/devexpress-reporting-angular-18.2.4.tgz#06876d2d9085c04f7cabaaf7f74f3349bc8e4638"
+  integrity sha512-f+2xILExJePbIXEYNFxVKOmM3n6pP7qEz2UjbLmQns1g34jN49QgvqNFgZoFVDX7Y5SwLc6QauPCmD2matUn3Q==
   dependencies:
-    devexpress-reporting "18.2.3"
+    devexpress-reporting "18.2.4"
     globalize "^1.3.0"
     tslib "^1.7.1"
 
-devexpress-reporting@18.2.3:
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/devexpress-reporting/-/devexpress-reporting-18.2.3.tgz#2e9c31c80e0f1784ffdd90d60f1440cd044cc87c"
-  integrity sha512-JRkpPj033s3lgncXkQ+YiuIYGnkkHbqGmA/p6RkiwfAY5G6cM2HSSKuWx6hiq776oVCiUkWjYh4l2llGnGgg/Q==
+devexpress-reporting@18.2.4:
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/devexpress-reporting/-/devexpress-reporting-18.2.4.tgz#76fdbbad427b938b649a2318f22891a6fe89118f"
+  integrity sha512-C4HlvztrQf6AysdYYRZH/aZyqTOklMw4BDMHlyWf8Kxrb8DD/QckFt3B+oUXCqJNrhRaQytH/YdXE1DJe5h69Q==
   dependencies:
-    "@devexpress/analytics-core" "18.2.3"
+    "@devexpress/analytics-core" "18.2.4"
     ace-builds "^1.3.0"
     jquery "^3.1.1"
     jquery-ui "^1.12.1"
     knockout "^3.4.0"
 
-devextreme-angular@~18.2.3:
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/devextreme-angular/-/devextreme-angular-18.2.3.tgz#89b6524cc6dde061780b754a31c65d2af57895c6"
-  integrity sha512-uxR24syhlbPzYoFLtFabgmB747PsjzGIMWLzHGpVwMQouyEra+71NMUo+wby6hGm3+w2jHqCuQslMySkar1YDQ==
+devextreme-angular@~18.2.4:
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/devextreme-angular/-/devextreme-angular-18.2.4.tgz#1236e860383bfe80551ffd4e873703b796629ca8"
+  integrity sha512-nBf6W3jKydnonRLIa/bm0fFmXLDG0RlyNL0n+Vzi6Fu9shjOG1fuZLE1z2Is7u718uokPfvGNdOSCUiUs19kmQ==
   dependencies:
     "@angular-devkit/schematics" "^0.8.4"
     devextreme-schematics latest
@@ -2444,10 +2444,10 @@ devextreme-schematics@latest:
     "@types/node" "^8.10.27"
     typescript "3.1.3"
 
-devextreme@18.2.3, devextreme@~18.2.3:
-  version "18.2.3"
-  resolved "https://registry.yarnpkg.com/devextreme/-/devextreme-18.2.3.tgz#4d71dadacd6bc7b77d0608b78a007851b6ea85c8"
-  integrity sha512-NQDMpCxcsO+fEN+hZKLo/RmDU89/9Hey3L03jkvXbHt/QCE8qvqRB+0XoL76fHR4x7Bm4uT5roOVl2ho8rBijQ==
+devextreme@18.2.4, devextreme@~18.2.4:
+  version "18.2.4"
+  resolved "https://registry.yarnpkg.com/devextreme/-/devextreme-18.2.4.tgz#2faade7f6e228e7202efa3edc99ab952143216c6"
+  integrity sha512-0Ph7GDCNHEPiabewRwx57nT6862T1IrCaSSrEl0mQZ8aIm5WTCnWM3NUrPbdkAhLjl2ePb9sPJEOFOHCITMk9w==
   dependencies:
     jszip "^2.0.0 || ^3.0.0"
     quill "^1.3.6"
